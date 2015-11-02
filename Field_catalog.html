@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Mergeable Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="dict/jquery-ui.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="dict/mergeable.js"></script>
+  <script src="dict/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<div class="container col-md-offset-3 col-md-6">
+  <span><h2>Basic List Group</h2></span><span><cite><small>Drag on arrows pointer</small></cite></span>
+      <ul class="list-group ">
+                            <li class="list-group-item" id="sku-1">
+                   
+                                <span >
+                                    <strong>ITEM 1</strong> <cite><small>Demo 1</small></cite>
+                                </span>
+                                
+                                <span class="handle-field pull-right" style="color: black;">
+                                    <i class="ace-icon fa fa-arrows"></i>
+                                </span>
+                            </li>
+                        	  <li class="list-group-item    " data-color="red" id="sku-2" >
+                              
+                                <span >
+                                    <strong>ITEM 2</strong> <cite><small>Demo 2</small></cite>
+                                </span>
+                                
+                                <span class="handle-field pull-right" style="color: black;">
+                                    <i class="ace-icon fa fa-arrows"></i>
+                                </span>
+                            </li>
+                            <li class="list-group-item    " data-color="red" id="sku-3" >
+                                <span >
+                                    <strong>ITEM 3</strong> <cite><small>Demo 3</small></cite>
+                                </span>
+                                
+                                <span class="handle-field pull-right" style="color: black;">
+                                    <i class="ace-icon fa fa-arrows"></i>
+                                </span>
+                            </li>
+                            <li class="list-group-item    " data-color="red" id="sku-4" >
+                                <span >
+                                    <strong>ITEM 4</strong> <cite><small>Demo 4</small></cite>
+                                </span>
+                                
+                                <span class="handle-field pull-right" style="color: black;">
+                                    <i class="ace-icon fa fa-arrows"></i>
+                                </span>
+                            </li>  
+                            <li class="list-group-item    " data-color="red" id="sku-5" >
+                                <span >
+                                    <strong>ITEM 5</strong> <cite><small>Demo 5</small></cite>
+                                </span>
+                                
+                                <span class="handle-field pull-right" style="color: black;">
+                                    <i class="ace-icon fa fa-arrows"></i>
+                                </span>
+                            </li>
+</ul>
+</div>
+<script type="text/javascript">
+	$('.list-group-item').mergeable({
+        										  handle: '.handle-field',          //To create a drag only on the drag icon
+        										  zIndex:100,                       //To get all the list itels on same level 
+        										  tolerance:'intersect',              //To decide whent to accept drops.  
+        					            snap: true,
+        					            snapMode: "inner",                  //To snap the element to another elements inner boundary
+					                    revert: 'invalid',                  //To allow elemet to revert back to original positon on invalid drop
+					                   
+					                    cursor: "move",                     //To change the cursor on drag
+					                    containment: "window",              //To contain the dragged element within the bound
+                              disable_after : false,              //To disable the dragging of the merged element
+                              delete_handle : 'handle-field',      //Give class name of the handle to delete multiple on merge. Used with handle.
+                            //  delete_handle_type : 'all',       // Choose to delete all or keep one handle.Only use with delete_handle eg : false,single.
+									});
+</script>
+</body>
+</html>
+
